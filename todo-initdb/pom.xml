@@ -19,10 +19,13 @@
             </activation>
             <properties>
                 <db.encoding>UTF8</db.encoding>
-                <db.basedir>${project.basedir}/src/main/sqls/postgres</db.basedir>
+<!--                 <db.basedir>${project.basedir}/src/main/sqls/postgres</db.basedir>
                 <db.url>jdbc:postgresql://127.0.0.1:5432/projectName</db.url>
+ -->
+                <db.basedir>${project.basedir}/src/main/sqls</db.basedir>
+                <db.url>jdbc:postgresql://127.0.0.1:5432/postgres</db.url>
                 <db.username>postgres</db.username>
-                <db.password>P0stgres</db.password>
+                <db.password>postgres</db.password>
                 <db.driver>org.postgresql.Driver</db.driver>
                 <db.groupId>org.postgresql</db.groupId>
                 <db.artifactId>postgresql</db.artifactId>
