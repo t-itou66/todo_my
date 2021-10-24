@@ -63,16 +63,38 @@
     </mvc:interceptors>
 
     <!-- Settings View Resolver. -->
-    <mvc:view-resolvers>
+<!--     <mvc:view-resolvers>
         <mvc:bean-name />
         <mvc:tiles />
         <mvc:jsp prefix="/WEB-INF/views/" />
     </mvc:view-resolvers>
+ -->
+    <mvc:view-resolvers>
+        <bean class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
+            <property name="templateEngine" ref="templateEngine" />
+            <property name="characterEncoding" value="UTF-8" />
+            <property name="forceContentType" value="true" />
+            <property name="contentType" value="text/html;charset=UTF-8" />
+        </bean>
+    </mvc:view-resolvers>
 
-    <mvc:tiles-configurer>
+<!--     <mvc:tiles-configurer>
         <mvc:definitions location="/WEB-INF/tiles/tiles-definitions.xml" />
     </mvc:tiles-configurer>
-
+ -->
+     <bean id="templateResolver"
+           class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
+        <property name="prefix" value="/WEB-INF/views/" />
+        <property name="suffix" value=".html" />
+        <property name="templateMode" value="HTML" />
+        <property name="characterEncoding" value="UTF-8" />
+    </bean>
+    <bean id="templateEngine"
+           class="org.thymeleaf.spring5.SpringTemplateEngine">
+        <property name="enableSpringELCompiler" value="true" />
+        <property name="templateResolver" ref="templateResolver" />
+    </bean>
+ 
     <bean id="requestDataValueProcessor"
         class="org.terasoluna.gfw.web.mvc.support.CompositeRequestDataValueProcessor">
         <constructor-arg>

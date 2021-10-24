@@ -78,20 +78,26 @@
             <artifactId>terasoluna-gfw-web-dependencies</artifactId>
             <type>pom</type>
         </dependency>
-        <dependency>
+<!--         <dependency>
             <groupId>org.terasoluna.gfw</groupId>
             <artifactId>terasoluna-gfw-web-jsp-dependencies</artifactId>
             <type>pom</type>
         </dependency>
+ -->
         <dependency>
             <groupId>org.terasoluna.gfw</groupId>
             <artifactId>terasoluna-gfw-security-web-dependencies</artifactId>
             <type>pom</type>
         </dependency>
-        <dependency>
+<!--         <dependency>
             <groupId>org.terasoluna.gfw</groupId>
             <artifactId>terasoluna-gfw-recommended-web-dependencies</artifactId>
             <type>pom</type>
+        </dependency>
+ -->
+        <dependency>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf-spring5</artifactId>
         </dependency>
         <!-- == End TERASOLUNA == -->
 
